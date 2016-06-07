@@ -12,14 +12,14 @@ angular.module('app')
       firebaseReference () {
         return firebase;
       }
-    }
+    };
   })
 
   .factory('AuthFactory', () => {
 
     return {
       login (myFirebase, email, password) {
-        myFirebase.auth().signInWithEmailAndPassword(email, password).then(console.log);
+        return myFirebase.auth().signInWithEmailAndPassword(email, password)
       }
-    }
+    };
   })
