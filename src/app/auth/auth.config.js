@@ -6,9 +6,4 @@ angular.module('app')
         controllerAs: 'auth',
         templateUrl: '/app/auth/login.html'
       })
-      .when('/logout', {
-        controller: 'LogoutCtrl',
-        controllerAs: 'auth',
-        template: ''
-      })
   })

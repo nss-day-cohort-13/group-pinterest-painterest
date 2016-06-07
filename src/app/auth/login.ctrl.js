@@ -1,10 +1,9 @@
 angular.module('app')
-  .controller('LoginCtrl', function ($location, AuthFactory) {
+  .controller('LoginCtrl', function (AuthFactory, InitializeFirebaseFactory) {
     const auth = this
+    const myFirebase = InitializeFirebaseFactory.firebaseReference()
 
     auth.login = function () {
-      AuthFactory.login(auth.user.email, auth.user.password)
-        .then(() => $location.path('/addresses'))
-        .catch(() => alert('Login Failed'))
+      AuthFactory.login(myFirebase, auth.user.email, auth.user.password)
     }
   })
