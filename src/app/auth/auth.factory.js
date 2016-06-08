@@ -15,11 +15,13 @@ angular.module('app')
     };
   })
 
-  .factory('AuthFactory', () => {
+  .factory('AuthFactory', ($timeout) => {
 
     return {
       login (myFirebase, email, password) {
-        return myFirebase.auth().signInWithEmailAndPassword(email, password)
+        return $timeout().then(() => (
+          myFirebase.auth().signInWithEmailAndPassword(email, password)
+        ))
       }
     };
   })
