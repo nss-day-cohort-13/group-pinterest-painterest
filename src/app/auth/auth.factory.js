@@ -47,9 +47,8 @@ angular.module('app')
 
 
     return {
-      submitPin (pinInfo) {
-        console.log(pinInfo)
-        $http.post('https://project-8469292309614253139.firebaseio.com/pins/.json', pinInfo)
+      submitInfo (type, pinInfo) {
+        return $http.post(`https://project-8469292309614253139.firebaseio.com/${type}/.json`, pinInfo)
       }
     }
   })
