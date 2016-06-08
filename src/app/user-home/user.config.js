@@ -18,4 +18,4 @@ angular.module('app')
         controllerAs: 'pin',
         templateUrl: '/app/user-home/pin.form.html'
       })
-  })
+ })

@@ -1,6 +1,5 @@
 angular.module('app')
 	.factory('InitializeFirebaseFactory', () => {
-
     		var config = {
     		  apiKey: "AIzaSyDLcch0WigGQ48hB64OJE0FqRkYrlH1dvk",
     		  authDomain: "project-8469292309614253139.firebaseapp.com",
@@ -12,14 +11,33 @@ angular.module('app')
       firebaseReference () {
         return firebase;
       }
-    }
+    };
   })
 
-  .factory('AuthFactory', () => {
+  .factory('AuthFactory', ($timeout) => {
+    let currentUser = null;
 
     return {
-      login (myFirebase, email, password) {
-        myFirebase.auth().signInWithEmailAndPassword(email, password).then(console.log);
+      login (email, password) {
+        return $timeout().then(() => (
+          firebase.auth().signInWithEmailAndPassword(email, password)
+        )).then(console.log);
+      },
+
+      logout () {
+       return $timeout().then(() => (
+          firebase.auth().signOut().then(function() {
+            // Sign-out successful.
+            currentUser = null;
+          }, function(error) {
+            // An error happened.
+            alert('Error Loggin Out');
+          })
+        ))
+      },
+
+      getUser () {
+        return currentUser;
       }
-    }
-  })
+    };
+  });
