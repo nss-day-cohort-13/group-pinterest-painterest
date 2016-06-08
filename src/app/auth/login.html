@@ -5,9 +5,24 @@
   <input type="submit" value="Login">
 </form>
 
+<div ng-controller="AccordionDemoCtrl">
+
  <uib-accordion-group is-open="status.open">
       <uib-accordion-heading>
         I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </uib-accordion-heading>
       This is just some content to illustrate fancy headings.
     </uib-accordion-group>
+</div>
+
+
+
+<!--   <div class="btn-group">
+        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Left'" uncheckable>Left</label>
+        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Middle'" uncheckable>Middle</label>
+        <label class="btn btn-success" ng-model="radioModel" uib-btn-radio="'Right'" uib-uncheckable="uncheckable">Right</label>
+    </div>
+    <div>
+        <button class="btn btn-default" ng-click="uncheckable = !uncheckable">
+            Toggle uncheckable
+        </button> -->
