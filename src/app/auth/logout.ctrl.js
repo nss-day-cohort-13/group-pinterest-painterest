@@ -1,6 +1,8 @@
 angular.module('app')
-  .controller('LogoutCtrl', function (AuthFactory, $location) {
-    AuthFactory.logout()
-      .then(() => $location.path('/login'))
-      .catch(() => $location.path('/login'))
+  .controller('LogoutCtrl', function (AuthFactory, $scope, $location) {
+
+    $scope.logout = function () {
+      AuthFactory.logout()
+        .then(() => $location.path('/login'))
+    }
   })
