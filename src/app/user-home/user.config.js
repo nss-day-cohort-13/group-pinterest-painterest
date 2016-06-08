@@ -8,8 +8,8 @@ angular.module('app')
       })
       $routeProvider
       .when('/newBoard', {
-        controller: 'UserCtrl',
-        controllerAs: 'user',
+        controller: 'newBoardCtrl',
+        controllerAs: 'board',
         templateUrl: '/app/user-home/board.form.html'
       })
       $routeProvider
