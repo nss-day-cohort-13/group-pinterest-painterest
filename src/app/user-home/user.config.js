@@ -12,4 +12,10 @@ angular.module('app')
         controllerAs: 'user',
         templateUrl: '/app/user-home/board.form.html'
       })
-  })
+      $routeProvider
+      .when('/newPin', {
+        controller: 'newPinCtrl',
+        controllerAs: 'pin',
+        templateUrl: '/app/user-home/pin.form.html'
+      })
+ })
