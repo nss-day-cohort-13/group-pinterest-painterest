@@ -21,7 +21,7 @@ angular.module('app')
       login (email, password) {
         return $timeout().then(() => (
           firebase.auth().signInWithEmailAndPassword(email, password)
-        )).then(console.log);
+        )).then((loginResponse) => currentUser = loginResponse.uid);
       },
 
       logout () {
@@ -40,4 +40,16 @@ angular.module('app')
         return currentUser;
       }
     };
-  });
+  })
+
+
+  .factory('UserFactory', ($http) => {
+
+
+    return {
+      submitInfo (type, pinInfo) {
+        return $http.post(`https://project-8469292309614253139.firebaseio.com/${type}/.json`, pinInfo)
+      }
+    }
+  })
+
