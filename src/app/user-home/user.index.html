@@ -3,10 +3,16 @@
 <a href="#/newBoard" class="btn btn-primary">Add New Board</a>
 
 
-<ul ng-repeat="pin in user.firebaseData.pins">
-<li>{{pin.pinDescription}}</li>
-<li>{{pin.pinUrl}}</li>
-<li>{{pin.uid}}</li>
-</ul>
+<div ng-repeat="pin in user.firebaseData">
+<p>{{pin}}</p>
+<p>{{pin.pinUrl}}</p>
+<p>{{pin.uid}}</p>
+<button ng-click="getId()">get id</button>
+</div>
 
+<!-- <div ng-repeat="board in user.firebaseData.boards">
+	<div>{{board.title}}</div>
+	<div>{{board.uid}}</div>
+</div>
+ -->
 

@@ -1,6 +1,6 @@
 angular.module('app')
 	.factory('UserFactory', ($http) =>{
-		let firebaseData = {}
+		// let firebaseData = {}
 		return{
 			getFirebase () {
 				return $http({
