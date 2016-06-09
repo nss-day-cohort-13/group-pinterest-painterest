@@ -1,12 +1,12 @@
 angular.module('app')
-  .controller('UserCtrl', function (UserFactory) {
+  .controller('UserCtrl', function (BoardFactory) {
   	const user = this
 
   	getId = function() {
   		console.log("hello")
   	}
 
-		UserFactory.getFirebase().then(data => user.firebaseData = data)
+		BoardFactory.getFirebase().then(data => user.firebaseData = data)
 		.then(console.log)
 
 
