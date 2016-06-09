@@ -1,0 +1,43 @@
+#grad1 {
+    height: 500px;
+    background: lightgrey; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(lightgrey, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(lightgrey, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(lightgrey, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(lightgrey, white); /* Standard syntax (must be last) */
+}
+
+.panel-group {
+	box-shadow: 10px 10px #C8C8C8;
+	margin: 0 auto;
+	width: 60%;
+}
+
+.form-horizontal {
+	color: orange;
+	width: 60%;
+	margin: 0 auto;
+
+}
+
+.boardF {
+	margin: 0 auto;
+	width: 60%;
+}
+/*.form-group {
+	margin: 0 auto;
+}*/
+
+.btn {
+	border-radius: 0%;
+}
+
+/*body {
+	background-color: #E8E8E8 ;
+}*/
+
+h1 {
+	font-family: 'Hind', sans-serif;
+	text-align: center;
+	color: orange;
+}
