@@ -3,6 +3,6 @@ angular.module('app')
 
     $scope.logout = function () {
       AuthFactory.logout()
-        .then(() => $location.path('/login'))
+        .then(() => $location.path('/'))
     }
   })
