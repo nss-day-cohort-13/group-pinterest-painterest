@@ -1,12 +1,14 @@
 angular.module('app')
-  .controller('UserCtrl', function ($http) {
+  .controller('UserCtrl', function (UserFactory) {
   	const user = this
 
-  $http({
-		method: 'GET',
-		url: 'https://project-8469292309614253139.firebaseio.com/.json'
+  	getId = function() {
+  		console.log("hello")
+  	}
+
+		UserFactory.getFirebase().then(data => user.firebaseData = data)
+		.then(console.log)
+
+
   })
-		.then((response) => {
-			console.log(response.data)
-		})
-  })
+
